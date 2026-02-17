@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarZone Mock Checkout</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">
+          <span class="logo-mark">CZ</span>
+          <span class="logo-text">CarZone</span>
+        </div>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="checkout.html" class="nav-link nav-cta active">
+            Checkout
+            <span class="cart-pill" data-cart-count>0</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container narrow">
+          <h1>Mock Checkout</h1>
+          <p>
+            This page simulates a simple checkout flow. No real payments are processed and no data
+            is stored.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container checkout-layout">
+          <div class="checkout-main">
+            <form class="form-card" id="checkout-form">
+              <h2>Shipping Details</h2>
+              <div class="form-row two-col">
+                <div>
+                  <label for="firstName">First name</label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    placeholder="Alex"
+                  />
+                </div>
+                <div>
+                  <label for="lastName">Last name</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    placeholder="Driver"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label for="address">Address</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  required
+                  placeholder="123 Demo Street"
+                />
+              </div>
+
+              <div class="form-row two-col">
+                <div>
+                  <label for="city">City</label>
+                  <input type="text" id="city" name="city" required placeholder="Auto City" />
+                </div>
+                <div>
+                  <label for="postal">Postal code</label>
+                  <input type="text" id="postal" name="postal" required placeholder="000000" />
+                </div>
+              </div>
+
+              <h2>Payment (Mock)</h2>
+              <div class="form-row">
+                <label for="cardNumber">Card number</label>
+                <input
+                  type="text"
+                  id="cardNumber"
+                  name="cardNumber"
+                  inputmode="numeric"
+                  required
+                  placeholder="4242 4242 4242 4242"
+                />
+              </div>
+
+              <div class="form-row two-col">
+                <div>
+                  <label for="expiry">Expiry</label>
+                  <input type="text" id="expiry" name="expiry" required placeholder="12/30" />
+                </div>
+                <div>
+                  <label for="cvv">CVV</label>
+                  <input
+                    type="password"
+                    id="cvv"
+                    name="cvv"
+                    required
+                    placeholder="123"
+                    maxlength="4"
+                  />
+                </div>
+              </div>
+
+              <p class="form-note">
+                This is a demo checkout form. Please do not enter real card details—nothing is
+                processed or saved.
+              </p>
+
+              <button type="submit" class="btn primary full-width">Place Mock Order</button>
+              <p class="form-success" id="checkout-success" hidden>
+                Your mock order has been placed. Thank you for exploring CarZone!
+              </p>
+            </form>
+          </div>
+
+          <aside class="checkout-summary">
+            <div class="summary-card">
+              <h2>Order Summary</h2>
+              <p class="summary-empty" data-cart-empty>
+                Your cart is empty. Go back to the home page to add products.
+              </p>
+              <ul class="summary-items" data-summary-items></ul>
+              <div class="summary-line">
+                <span>Subtotal</span>
+                <span data-summary-subtotal>$0.00</span>
+              </div>
+              <div class="summary-line">
+                <span>Shipping</span>
+                <span data-summary-shipping>$0.00</span>
+              </div>
+              <div class="summary-line total">
+                <span>Total</span>
+                <span data-summary-total>$0.00</span>
+              </div>
+              <p class="summary-note">
+                This checkout is for demo purposes only. No payment is processed.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> CarZone. All rights reserved.</p>
+        <p class="footer-links">
+          <a href="about.html">About</a>
+          <span>&middot;</span>
+          <a href="contact.html">Contact</a>
+          <span>&middot;</span>
+          <a href="checkout.html">Mock Checkout</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="cart.js"></script>
+  </body>
+</html>
+

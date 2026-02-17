@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact CarZone</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">
+          <span class="logo-mark">CZ</span>
+          <span class="logo-text">CarZone</span>
+        </div>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+          <a href="checkout.html" class="nav-link nav-cta">
+            Checkout
+            <span class="cart-pill" data-cart-count>0</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container narrow">
+          <h1>Contact Us</h1>
+          <p>
+            Have a question about fitment, shipping, or an order? Send us a message and our support
+            team will get back to you.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split">
+          <div>
+            <h2>Send a Message</h2>
+            <form class="form-card" id="contact-form">
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Alex Driver" />
+              </div>
+
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                />
+              </div>
+
+              <div class="form-row">
+                <label for="topic">Topic</label>
+                <select id="topic" name="topic" required>
+                  <option value="">Select a topic</option>
+                  <option value="products">Product question</option>
+                  <option value="orders">Order or shipping</option>
+                  <option value="returns">Returns &amp; warranty</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  placeholder="Tell us how we can help..."
+                ></textarea>
+              </div>
+
+              <p class="form-note">
+                This is a demo contact form. Submissions are not actually sent, but you can use it
+                to mock the flow.
+              </p>
+
+              <button type="submit" class="btn primary full-width">Send Message</button>
+              <p class="form-success" id="contact-success" hidden>
+                Thank you! Your message has been recorded (demo).
+              </p>
+            </form>
+          </div>
+
+          <div>
+            <h2>Quick Info</h2>
+            <ul class="contact-list">
+              <li>
+                <strong>Email</strong><br />
+                support@carzone-demo.com
+              </li>
+              <li>
+                <strong>Hours</strong><br />
+                Monday – Friday, 9:00 – 18:00
+              </li>
+              <li>
+                <strong>Location</strong><br />
+                123 Demo Street, Auto City
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> CarZone. All rights reserved.</p>
+        <p class="footer-links">
+          <a href="about.html">About</a>
+          <span>&middot;</span>
+          <a href="contact.html">Contact</a>
+          <span>&middot;</span>
+          <a href="checkout.html">Mock Checkout</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="cart.js"></script>
+  </body>
+</html>
+
