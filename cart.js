@@ -52,7 +52,15 @@
   }
 
   function formatCurrency(value) {
-    return "$" + value.toFixed(2);
+    try {
+      return new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 0,
+      }).format(value);
+    } catch (e) {
+      return "₹" + Math.round(value).toString();
+    }
   }
 
   function renderCheckout() {
@@ -68,9 +76,9 @@
 
     if (!cart.length) {
       emptyEl.hidden = false;
-      subtotalEl.textContent = "$0.00";
-      shippingEl.textContent = "$0.00";
-      totalEl.textContent = "$0.00";
+      subtotalEl.textContent = formatCurrency(0);
+      shippingEl.textContent = formatCurrency(0);
+      totalEl.textContent = formatCurrency(0);
       return;
     }
 
@@ -86,7 +94,7 @@
       list.appendChild(li);
     });
 
-    const shipping = 9.99;
+    const shipping = 99;
     subtotalEl.textContent = formatCurrency(subtotal);
     shippingEl.textContent = formatCurrency(cart.length ? shipping : 0);
     totalEl.textContent = formatCurrency(subtotal + (cart.length ? shipping : 0));
